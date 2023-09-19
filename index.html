@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JacaScript</title>
+    <script>
+        /*
+        var n1 =10;
+        var n2 = 2;
+        var soma =n1 + n2;
+        var mult = n1* n2;
+        var sub = n1 - n2;
+        var div = n1 / n2;
+
+        console.log("Soma: "+ soma);
+        console.log("Subtração: "+ sub);
+        console.log("Multiplicação: "+ mult);
+        console.log("Divisão: "+ div);
+
+        if(n1 >n2){
+            console.log("O valor de N1 é meior que N2");           
+        }else{
+            console.log("O valor de N1 é menor que N2");
+        }
+*/
+        function validarDados(){
+            if(document.getElementById("nome").value == ""){
+                console.log("O campo nome esta vazio!");
+            }else{
+                var tamanho= document.getElementById("nome").value.length;
+               // console.log("Tamanho: " + tamanho);
+               if( tamanho > 50){
+                   console.log("O campo nome está muito grande!");
+               }
+            }
+
+            if(document.getElementById("endereco").value == ""){
+                console.log("O campo Endereço esta vazio!");
+            }else{
+                var tamanho= document.getElementById("endereco").value.length;
+               // console.log("Tamanho: " + tamanho);
+               if( tamanho > 20){
+                   console.log("O campo Endereço está muito grande!");
+               }
+            }
+
+            if(document.getElementById("bairro").value == ""){
+                console.log("O campo Bairro esta vazio!");
+            }else{
+                var tamanho= document.getElementById("bairro").value.length;
+               // console.log("Tamanho: " + tamanho);
+               if( tamanho > 20){
+                   console.log("O campo Bairro está muito grande!");
+               }
+            }
+
+            var cepValor = document.getElementById('cep').value;
+            if (document.getElementById("cep").value == "") {
+                console.log("O campo do CEP está vazio!");
+            } else {
+                var tamanho = document.getElementById("cep").value.length;
+                // Verificar se o hífen (-) está presente no CEP
+                if (tamanho > 10) {
+                    console.log("O campo do CEP está muito grande!");
+
+                 } else if (document.getElementById("cep").value.indexOf("-") == -1) {
+                    console.log("O campo do CEP deve conter o hífen (-)!");
+                    var cepValor = document.getElementById('cep').value;
+                    //expressões regulares
+                      
+                } else  {
+                    var regex = /^\d{5}-\d{3}$/;
+                       var temHifen = regex.test(cepValor);
+                       if (temHifen) {
+                        console.log("O hífen está no lugar certo");
+                            } else {
+                                console.log("Coloquqe o hífen no lugar certo");
+                }
+         }
+     }
+}
+
+
+             
+    </script>
+</head>
+<body>
+    <form>
+        Nome:<input type="text" name="nome" id="nome"><br><br>
+        Endereço:<input type="text" name="endereco " id="endereco"><br><br>
+        Bairro:<input type="text" name="bairrp" id="bairro"><br><br>
+        Cep:<input type="text" name="cep" id="cep"><br><br>
+
+        <button type="button" name="cadastrar" id="cadastrar" onclick="validarDados()"> Cadastrar </button>
+
+
+    </form>
+</body>
+</html>
